@@ -1,2 +1,24 @@
-package com.alex.vis.inventoryservice.model;public class Inventory {
+package com.alex.vis.inventoryservice.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "inventory")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Inventory {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+    private String scuCode;
+    private Integer stock;
+
 }
