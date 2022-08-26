@@ -16,6 +16,7 @@ public class InventoryRestController {
 
     @GetMapping("/{scuCode}")
     public Boolean isInStock(@PathVariable String scuCode) {
+        System.out.println("In inventory controller");
         Inventory inventory = inventoryRepository.findByScuCode(scuCode)
                 .orElseThrow(() -> new RuntimeException("Cannot find product by scu code " + scuCode));
 
